@@ -2,13 +2,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
-import { NewCategoryComponent } from './new-category.component';
-
 // Dropdowns Component
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 // Category Routing
 import { CategoryRoutingModule } from './category-routing.module';
+
+import { NewCategoryComponent } from './new-category/new-category.component';
+import { CategoryListingComponent } from './category-listing/category-listing.component';
+import { CategoryDetailsComponent } from './category-details/category-details.component';
 
 // Angular
 
@@ -20,7 +22,9 @@ import { CategoryRoutingModule } from './category-routing.module';
     CategoryRoutingModule
   ],
   declarations: [
-    NewCategoryComponent
+    NewCategoryComponent,
+    CategoryListingComponent,
+    CategoryDetailsComponent
   ]
 })
 export class CategoryModule { }

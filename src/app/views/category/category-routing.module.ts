@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NewCategoryComponent } from './new-category.component';
+import { NewCategoryComponent } from './new-category/new-category.component';
+import { CategoryDetailsComponent } from './category-details/category-details.component';
+import { CategoryListingComponent } from './category-listing/category-listing.component';
 
 
 
@@ -18,20 +20,20 @@ const routes: Routes = [
           title: 'New Category'
         }
       },
-    //   {
-    //     path: 'dropdowns',
-    //     component: DropdownsComponent,
-    //     data: {
-    //       title: 'Dropdowns'
-    //     }
-    //   },
-    //   {
-    //     path: 'brand-buttons',
-    //     component: BrandButtonsComponent,
-    //     data: {
-    //       title: 'Brand buttons'
-    //     }
-    //   }
+      {
+        path: 'category-details',
+        component: CategoryDetailsComponent,
+        data: {
+          title: 'Category Details'
+        }
+      },
+      {
+        path: 'category-listing',
+        component: CategoryListingComponent,
+        data: {
+          title: 'Category Listing'
+        }
+      }
     ]
   }
 ];

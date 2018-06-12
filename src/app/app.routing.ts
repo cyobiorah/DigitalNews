@@ -34,6 +34,10 @@ export const routes: Routes = [
         path: 'category',
         loadChildren: './views/category/category.module#CategoryModule'
       },
+      {
+        path: 'article',
+        loadChildren: './views/article/article.module#ArticleModule'
+      }
     ]
   }
 ];

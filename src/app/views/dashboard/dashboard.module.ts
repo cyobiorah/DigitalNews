@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
 import { CategoryModule } from '../category/category.module';
+import { ArticleModule } from '../article/article.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { CategoryModule } from '../category/category.module';
     DashboardRoutingModule,
     ChartsModule,
     BsDropdownModule,
-    CategoryModule
+    CategoryModule,
+    ArticleModule
   ],
   declarations: [ DashboardComponent ]
 })
