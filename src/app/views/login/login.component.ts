@@ -40,9 +40,12 @@ export class LoginComponent {
       console.log(this.loginForm.controls['email'].value);
       console.log(this.loginForm.controls['password'].value);
 
+      localStorage.setItem('user', this.loginForm.controls['email'].value);
       this.router.navigateByUrl('');
+      this.loading = false;
     } else {
       console.log('check input fields');
+      this.loading = false;
     }
   }
 }

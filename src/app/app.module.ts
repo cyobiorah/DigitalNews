@@ -28,7 +28,17 @@ import {
   AppHeaderModule,
   AppFooterModule,
   AppSidebarModule,
-} from '@coreui/angular'
+} from '@coreui/angular';
+
+// AuthGuard
+import {
+  AuthGuardService as AuthGuard
+} from './auth/auth-guard.service';
+
+//No AuthGuard
+import {
+  NoAuthGuardService as NoAuthGuard
+} from './auth/no-auth-guard.service';
 
 // Import routing module
 import { AppRoutingModule } from './app.routing';
@@ -59,10 +69,14 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     ...APP_CONTAINERS,
     LoginComponent,
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy,
+    },
+    AuthGuard,
+    NoAuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

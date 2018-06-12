@@ -1,6 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+// AuthGuard
+import {
+  AuthGuardService as AuthGuard
+} from './auth/auth-guard.service';
+
+//No AuthGuard
+import {
+  NoAuthGuardService as NoAuthGuard
+} from './auth/no-auth-guard.service';
+
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
 
@@ -11,10 +21,12 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
+    canActivate: [AuthGuard],
   },
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [NoAuthGuard],
     data: {
       title: 'Login Page'
     }
