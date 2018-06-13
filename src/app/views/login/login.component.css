@@ -1,0 +1,50 @@
+.app-body {
+    min-height: 100vh;
+	background: url('../../../assets/img/bg.jpg');
+	background-size: cover;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+}
+
+.title {
+    font-size: 30px;
+    font-family: 'Noto Serif', serif;
+    color: #26A8D8;
+}
+
+/* .card-label {
+    color: #000 !important;   
+} */
+
+.card {
+    border-radius: 10px !important;
+    background-color: #F7F6F2 !important;
+}
+
+.input-group {
+    position: relative !important;
+    margin-bottom: 25px !important;
+}
+
+
+.form-error {
+    position: absolute;
+    bottom: -20px;
+    opacity: 0.9;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+    color: red;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}

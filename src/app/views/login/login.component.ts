@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: 'login.component.html'
+  templateUrl: 'login.component.html',
+  styleUrls: ['login.component.css']
 })
 export class LoginComponent {
   
@@ -16,6 +17,8 @@ export class LoginComponent {
   loading: boolean;
 
   constructor(public fb: FormBuilder, public router: Router) {
+
+    let emailRegex = '^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$';
 
     this.loginForm = fb.group({
       'email': ['', [Validators.required, Validators.email]],
@@ -45,6 +48,7 @@ export class LoginComponent {
       this.loading = false;
     } else {
       console.log('check input fields');
+      alert('Invalid Credentials');
       this.loading = false;
     }
   }
