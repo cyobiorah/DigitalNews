@@ -37,6 +37,10 @@ export const routes: Routes = [
       {
         path: 'article',
         loadChildren: './views/article/article.module#ArticleModule'
+      },
+      {
+        path: 'subscription',
+        loadChildren: './views/subscription/subscription.module#SubscriptionModule'
       }
     ]
   }

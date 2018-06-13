@@ -33,7 +33,7 @@ export const navItems = [
   // },
   {
     name: 'Subscriptions',
-    url: '/subscription/subscriptions',
+    url: '/subscription/subscription-list',
     icon: 'icon-basket-loaded'
   },
   {
