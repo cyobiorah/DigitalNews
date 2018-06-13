@@ -51,6 +51,7 @@
     "moment": "2.22.1",
     "mutationobserver-shim": "^0.3.2",
     "ng2-charts": "1.6.0",
+    "ng2-ckeditor": "^1.2.0",
     "ngx-bootstrap": "3.0.0",
     "ngx-perfect-scrollbar": "6.1.0",
     "path": "^0.12.7",

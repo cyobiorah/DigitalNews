@@ -100,8 +100,8 @@
           </a>
           <a class="btn" [routerLink]="['/dashboard']">
             <i class="icon-graph"></i> &nbsp;Dashboard</a>
-          <a class="btn" href="#">
-            <i class="icon-settings"></i> &nbsp;Settings</a>
+          <a class="btn" (click)="logout()">
+            <i class="icon-logout"></i> &nbsp;Logout</a>
         </div>
       </li>
     </ol>
