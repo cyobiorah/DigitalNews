@@ -1,89 +1,77 @@
-<div class="col-lg-12" style="margin-bottom: 20px;">
-    <button class="btn btn-sm btn-primary" routerLink="/article/new-article">New Article</button>
-</div>
-<div class="col-lg-12">
-    <div class="card">
-        <div class="card-header">
-            <i class="fa fa-align-justify"></i> Articles
-        </div>
-        <div class="card-body">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Category</th>
-                        <th>Date Created</th>
-                        <th>Author</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Oshiomhole: If I Were Buhari, I’ll Jail Obasanjo</td>
-                        <td>Politics</td>
-                        <td>13/06/2018</td>
-                        <td>Onyebuchi Ezigbo</td>
-                        <!-- <td>
-                            <span class="badge badge-success">Active</span>
-                        </td> -->
-                    </tr>
-                    <tr>
-                        <td>Another Former Governor, Dariye, Bags 14 Years Imprisonment for Corruption</td>
-                        <td>Corruption</td>
-                        <td>13/06/2018</td>
-                        <td>Seriki Adinoyi</td>
-                        <!-- <td>
-                            <span class="badge badge-danger">Banned</span>
-                        </td> -->
-                    </tr>
-                    <tr>
-                        <td>Group Calls for Greater Inclusion of Women in Clean Energy Access</td>
-                        <td>Business</td>
-                        <td>13/06/2018</td>
-                        <td>Udora Orizu</td>
-                        <!-- <td>
-                            <span class="badge badge-secondary">Inactive</span>
-                        </td> -->
-                    </tr>
-                    <tr>
-                        <td>Alison-Madueke Refutes Claims She Awarded $24bn Oil Swaps without Contracts</td>
-                        <td>Oil &amp; Gas</td>
-                        <td>13/06/2018</td>
-                        <td>Deji Elumoye</td>
-                        <!-- <td>
-                            <span class="badge badge-warning">Pending</span>
-                        </td> -->
-                    </tr>
-                    <tr>
-                        <td>Eagles to Train Behind Closed Gates in Essentuki</td>
-                        <td>Sports</td>
-                        <td>13/06/2018</td>
-                        <td>Duro Ikhazuagbe</td>
-                        <!-- <td>
-                            <span class="badge badge-success">Active</span>
-                        </td> -->
-                    </tr>
-                </tbody>
-            </table>
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#">Prev</a>
-                </li>
-                <li class="page-item active">
-                    <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">4</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
+<div class="animated fadeIn">
+    <div class="col-lg-12" style="margin-bottom: 20px;">
+        <button class="btn btn-sm btn-primary" routerLink="/article/new-article">New Article</button>
+    </div>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> Articles
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Date Created</th>
+                            <th>Author</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr routerLink="/article/article-details" style="cursor: pointer">
+                            <td>Oshiomhole: If I Were Buhari, I’ll Jail Obasanjo</td>
+                            <td>Politics</td>
+                            <td>13/06/2018</td>
+                            <td>Onyebuchi Ezigbo</td>
+                        </tr>
+                        <tr routerLink="/article/article-details" style="cursor: pointer">
+                            <td>Another Former Governor, Dariye, Bags 14 Years Imprisonment for Corruption</td>
+                            <td>Corruption</td>
+                            <td>13/06/2018</td>
+                            <td>Seriki Adinoyi</td>
+                        </tr>
+                        <tr routerLink="/article/article-details" style="cursor: pointer">
+                            <td>Group Calls for Greater Inclusion of Women in Clean Energy Access</td>
+                            <td>Business</td>
+                            <td>13/06/2018</td>
+                            <td>Udora Orizu</td>
+                        </tr>
+                        <tr routerLink="/article/article-details" style="cursor: pointer">
+                            <td>Alison-Madueke Refutes Claims She Awarded $24bn Oil Swaps without Contracts</td>
+                            <td>Oil &amp; Gas</td>
+                            <td>13/06/2018</td>
+                            <td>Deji Elumoye</td>
+                        </tr>
+                        <tr routerLink="/article/article-details" style="cursor: pointer">
+                            <td>Eagles to Train Behind Closed Gates in Essentuki</td>
+                            <td>Sports</td>
+                            <td>13/06/2018</td>
+                            <td>Duro Ikhazuagbe</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#">Prev</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">4</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+
 </div>

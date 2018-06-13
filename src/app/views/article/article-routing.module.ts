@@ -12,6 +12,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule, Router } from '@angular/router';
 import { ArticleListingComponent } from "./article-listing/article-listing.component";
 import { NewArticleComponent } from "./new-article/new-article.component";
+import { ArticleDetailsComponent } from './article-details/article-details.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,14 @@ const routes: Routes = [
                 canActivate: [AuthGuard],
                 data: {
                     title: 'New Article'
+                }
+            },
+            {
+                path: 'article-details',
+                component: ArticleDetailsComponent,
+                canActivate: [AuthGuard],
+                data: {
+                    title: 'Article Details'
                 }
             }
         ]

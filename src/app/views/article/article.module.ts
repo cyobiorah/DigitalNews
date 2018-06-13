@@ -7,6 +7,7 @@ import { ArticleRoutingModule } from './article-routing.module';
 import { ArticleListingComponent } from './article-listing/article-listing.component';
 import { NewArticleComponent } from './new-article/new-article.component';
 import { CKEditorModule } from 'ng2-ckeditor';
+import { ArticleDetailsComponent } from './article-details/article-details.component';
 
 @NgModule({
     imports: [
@@ -17,6 +18,7 @@ import { CKEditorModule } from 'ng2-ckeditor';
     ],
     declarations: [
         ArticleListingComponent,
+        ArticleDetailsComponent,
         NewArticleComponent
     ]
 })
