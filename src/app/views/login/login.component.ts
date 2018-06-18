@@ -1,24 +1,26 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: 'login.component.html',
-  styleUrls: ['login.component.css']
+  styleUrls: ['login.component.css'],
+  providers: [UserService]
 })
 export class LoginComponent {
   
   email: string;
   password: string;
-  user: any = {};
   loginForm: FormGroup;
   formSubmitAttempt: boolean;
   loading: boolean;
 
-  constructor(public fb: FormBuilder, public router: Router) {
+  constructor(public fb: FormBuilder, public router: Router, public userSrv: UserService, private toastr: ToastrService) {
 
-    let emailRegex = '^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$';
+    // let emailRegex = '^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$';
 
     this.loginForm = fb.group({
       'email': ['', [Validators.required, Validators.email]],
@@ -26,30 +28,30 @@ export class LoginComponent {
     })
   }
 
-  ngOnInit() {
-
-    // this.email = 'admin@enewsvendor';
-    // this.password = 'password';
-    // this.loginForm.controls['email'].setValue('admin@enewsvendor.com');
-    // this.loginForm.controls['password'].setValue('password');
-  }
+  ngOnInit() { }
 
   login() {
     
-    this.loading = true;
     this.formSubmitAttempt = true;
-    console.log('here');
-    if (this.loginForm.controls['email'].value == 'admin@enewsvendor.com' && this.loginForm.controls['password'].value == 'password') {
-      console.log(this.loginForm.controls['email'].value);
-      console.log(this.loginForm.controls['password'].value);
 
-      localStorage.setItem('user', this.loginForm.controls['email'].value);
-      this.router.navigateByUrl('');
-      this.loading = false;
-    } else {
-      console.log('check input fields');
-      alert('Invalid Credentials');
-      this.loading = false;
+    if (this.loginForm.valid) {
+
+      this.loading = true;
+      this.userSrv.login(this.loginForm.value).subscribe(res => {
+
+        console.log(res.data);
+        localStorage.setItem('authUser', JSON.stringify(res.data));
+        localStorage.setItem('token', res.data.token);
+        this.toastr.success('Logged In');
+        this.router.navigateByUrl('');
+        this.loading = false;
+      }, err => {
+
+        console.log(err.error.message);
+        this.toastr.error(err.error.message, 'Error!');
+        this.loading = false;
+      })
     }
   }
+  
 }

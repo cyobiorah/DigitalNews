@@ -49,6 +49,10 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { Globals } from './shared/api';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -66,6 +70,9 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     FormsModule,
     ReactiveFormsModule,
     CKEditorModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   declarations: [
     AppComponent,
@@ -78,7 +85,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
       useClass: HashLocationStrategy,
     },
     AuthGuard,
-    NoAuthGuard
+    NoAuthGuard,
+    Globals
   ],
   bootstrap: [AppComponent]
 })

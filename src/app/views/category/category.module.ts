@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 // Dropdowns Component
@@ -19,6 +19,7 @@ import { CategoryDetailsComponent } from './category-details/category-details.co
     CommonModule,
     BsDropdownModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule,
     CategoryRoutingModule
   ],
   declarations: [

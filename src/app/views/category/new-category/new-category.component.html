@@ -1,1 +1,31 @@
-new category works
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Create Category</strong>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="categoryForm" (ngSubmit)="createCategory()" novalidate>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="name">Category Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Category Name" [formControl]="categoryForm.controls['name']">
+                            </div>
+
+                            <div *ngIf="categoryForm.controls['name'].hasError('required') && formSubmitAttempt" class="form-error">
+                                category name is required
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary px-4" [disabled]="loading" style="float: right; margin-right: 15px;">
+                            Publish Category
+                            <i class="fa fa-spinner fa-spin" *ngIf="loading"></i>
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
