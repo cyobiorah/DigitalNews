@@ -39,7 +39,7 @@ const routes: Routes = [
                 }
             },
             {
-                path: 'article-details',
+                path: 'article-details/{{id}}',
                 component: ArticleDetailsComponent,
                 canActivate: [AuthGuard],
                 data: {

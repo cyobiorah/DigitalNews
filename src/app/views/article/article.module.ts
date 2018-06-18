@@ -1,11 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { ArticleRoutingModule } from './article-routing.module';
 import { ArticleListingComponent } from './article-listing/article-listing.component';
 import { NewArticleComponent } from './new-article/new-article.component';
-import { CKEditorModule } from 'ng2-ckeditor';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 
 @NgModule({
@@ -13,7 +12,7 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
         CommonModule,
         ArticleRoutingModule,
         FormsModule,
-        CKEditorModule
+        ReactiveFormsModule,
     ],
     declarations: [
         ArticleListingComponent,

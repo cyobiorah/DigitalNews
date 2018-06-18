@@ -13,44 +13,19 @@
                         <tr>
                             <th>Title</th>
                             <th>Category</th>
-                            <th>Date Created</th>
-                            <th>Author</th>
+                            <th>Content</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr routerLink="/article/article-details" style="cursor: pointer">
-                            <td>Oshiomhole: If I Were Buhari, I’ll Jail Obasanjo</td>
-                            <td>Politics</td>
-                            <td>13/06/2018</td>
-                            <td>Onyebuchi Ezigbo</td>
-                        </tr>
-                        <tr routerLink="/article/article-details" style="cursor: pointer">
-                            <td>Another Former Governor, Dariye, Bags 14 Years Imprisonment for Corruption</td>
-                            <td>Corruption</td>
-                            <td>13/06/2018</td>
-                            <td>Seriki Adinoyi</td>
-                        </tr>
-                        <tr routerLink="/article/article-details" style="cursor: pointer">
-                            <td>Group Calls for Greater Inclusion of Women in Clean Energy Access</td>
-                            <td>Business</td>
-                            <td>13/06/2018</td>
-                            <td>Udora Orizu</td>
-                        </tr>
-                        <tr routerLink="/article/article-details" style="cursor: pointer">
-                            <td>Alison-Madueke Refutes Claims She Awarded $24bn Oil Swaps without Contracts</td>
-                            <td>Oil &amp; Gas</td>
-                            <td>13/06/2018</td>
-                            <td>Deji Elumoye</td>
-                        </tr>
-                        <tr routerLink="/article/article-details" style="cursor: pointer">
-                            <td>Eagles to Train Behind Closed Gates in Essentuki</td>
-                            <td>Sports</td>
-                            <td>13/06/2018</td>
-                            <td>Duro Ikhazuagbe</td>
+                        <!-- <tr *ngFor="let article of articles" routerLink="/article/article-details/{{article.id}}" style="cursor: pointer"> -->
+                        <tr *ngFor="let article of articles" routerLink="" style="cursor: pointer">
+                            <td>{{article.title}}</td>
+                            <td>{{article.category_name}}</td>
+                            <td [innerHTML]="article.content.substr(0, 100) + '...'"></td>
                         </tr>
                     </tbody>
                 </table>
-                <ul class="pagination">
+                <!-- <ul class="pagination">
                     <li class="page-item">
                         <a class="page-link" href="#">Prev</a>
                     </li>
@@ -69,7 +44,7 @@
                     <li class="page-item">
                         <a class="page-link" href="#">Next</a>
                     </li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </div>
