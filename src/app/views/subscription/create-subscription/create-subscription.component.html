@@ -1,0 +1,52 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Create Category</strong>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="subscriptionForm" (ngSubmit)="createSubscription()" novalidate>
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="amount">Subscription Amount</label>
+                                <input type="number" class="form-control" id="amount" name="amount" placeholder="Enter Amount" [formControl]="subscriptionForm.controls['amount']" required>
+                            </div>
+
+                            <div *ngIf="subscriptionForm.controls['amount'].hasError('required') && formSubmitAttempt" class="form-error">
+                                subscription amount is required
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="name">Subscription Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Subscription Name" [formControl]="subscriptionForm.controls['name']">
+                            </div>
+
+                            <div *ngIf="subscriptionForm.controls['name'].hasError('required') && formSubmitAttempt" class="form-error">
+                                subscription name is required
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="description">Desription</label>
+                                <textarea id="description" name="description" rows="4" class="form-control" placeholder="Subscription Description" [formControl]="subscriptionForm.controls['description']"></textarea>
+                            </div>
+
+                            <div *ngIf="subscriptionForm.controls['description'].hasError('required') && formSubmitAttempt" class="form-error">description is required</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary px-4" [disabled]="loading" style="float: right; margin-right: 15px;">
+                            Publish Subscription
+                            <i class="fa fa-spinner fa-spin" *ngIf="loading"></i>
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

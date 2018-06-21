@@ -5,30 +5,30 @@ import {
 
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule, Router } from '@angular/router';
-import { SubscriptionListComponent } from './subscription-list/subscription-list.component';
-import { CreateSubscriptionComponent } from './create-subscription/create-subscription.component';
+import { PapersListComponent } from './papers-list/papers-list.component';
+import { UploadPapersComponent } from './upload-papers/upload-papers.component';
 
 const routes: Routes = [
     {
         path: '',
         data: {
-            title: 'Subscriptions'
+            title: 'Papers'
         },
         children: [
             {
-                path: 'subscription-list',
-                component: SubscriptionListComponent,
+                path: 'papers-list',
+                component: PapersListComponent,
                 canActivate: [AuthGuard],
                 data: {
-                    title: 'Subscription List'
+                    title: 'Papers List'
                 }
             },
             {
-                path: 'create-subscription',
-                component: CreateSubscriptionComponent,
+                path: 'upload-papers',
+                component: UploadPapersComponent,
                 canActivate: [AuthGuard],
                 data: {
-                    title: 'Create Subscription'
+                    title: 'Upload Papers'
                 }
             }
         ]
@@ -39,4 +39,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class SubscriptionRoutingModule { }
+export class PapersRoutingModule { }

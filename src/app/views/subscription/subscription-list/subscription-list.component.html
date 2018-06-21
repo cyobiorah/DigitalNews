@@ -1,1 +1,51 @@
-subscription page works
+<div class="animated fadeIn">
+    <div class="col-lg-12" style="margin-bottom: 20px;">
+        <button class="btn btn-primary" routerLink="/subscription/create-subscription">New Subscription</button>
+    </div>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> Subscriptions
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let sub of subscriptions" routerLink="" style="cursor: pointer">
+                            <td>{{sub.amount}}</td>
+                            <td>{{sub.name}}</td>
+                            <td>{{sub.description}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#">Prev</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">4</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+
+</div>

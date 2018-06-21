@@ -4,14 +4,14 @@ import { Globals } from '../shared/api';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class CategoryService {
+export class SubscriptionService {
 
-    categoryUrl = this.globals.CATEGORY_URL;
+    subscriptionUrl = this.globals.SUBSCRIPTION_URL;
     authToken = localStorage.getItem('token');
 
     constructor(private http: HttpClient, private globals: Globals) { }
 
-    createCategory(data: any): Observable<any> {
+    createSubscription(data: any): Observable<any> {
 
         const httpOptions = {
             headers: new HttpHeaders({
@@ -19,11 +19,11 @@ export class CategoryService {
             })
         }
 
-        return this.http.post(this.categoryUrl, data, httpOptions)
+        return this.http.post(this.subscriptionUrl, data, httpOptions)
     }
 
-    fetchCategorys(): Observable<any> {
+    fetchSubscription(): Observable<any> {
 
-        return this.http.get(this.categoryUrl)
+        return this.http.get(this.subscriptionUrl)
     }
 }
