@@ -39,11 +39,19 @@ export class LoginComponent {
       this.loading = true;
       this.userSrv.login(this.loginForm.value).subscribe(res => {
 
-        console.log(res.data);
-        localStorage.setItem('authUser', JSON.stringify(res.data));
-        localStorage.setItem('token', res.data.token);
-        this.toastr.success('Logged In');
-        this.router.navigateByUrl('');
+        // console.log(res.data);
+
+        if (res.data.user.is_admin === false) {
+
+          console.log('not admin')
+          this.toastr.error('Admin Only');
+        } else {
+          
+          localStorage.setItem('authUser', JSON.stringify(res.data));
+          localStorage.setItem('token', res.data.token);
+          this.toastr.success('Logged In');
+          this.router.navigateByUrl('');
+        }
         this.loading = false;
       }, err => {
 

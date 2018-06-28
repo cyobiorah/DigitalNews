@@ -6,12 +6,12 @@
                     <strong>Create Article</strong>
                 </div>
                 <div class="card-body">
-                    <form [formGroup]="articleForm" (ngSubmit)="createArticle()" novalidate>
+                    <form role="form" [formGroup]="articleForm" (ngSubmit)="createArticle()" novalidate>
                         <div class="col-sm-12">
                             <div class="form-group row">
-                                <label class="col-md-3 col-form-label" for="category">Category</label>
+                                <label class="col-md-6 col-form-label" for="category">Category</label>
                                 <div class="col-md-12">
-                                    <select id="category" name="category" class="form-control" [formControl]="articleForm.controls['category']">
+                                    <select id="category" name="category" class="form-control" [formControl]="articleForm.controls['category']" required>
                                         <option *ngFor="let category of categorys" [value]="category.slug">{{category.name}}</option>
                                     </select>
                                 </div>
@@ -22,9 +22,9 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-md-3 col-form-label" for="name">Article Name</label>
+                                <label class="col-md-6 col-form-label" for="name">Article Name</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter Article Title" [formControl]="articleForm.controls['title']">
+                                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter Article Title" [formControl]="articleForm.controls['title']" required>
                                 </div>
 
                                 <div *ngIf="articleForm.controls['title'].hasError('required') && formSubmitAttempt" class="form-error">
@@ -33,13 +33,35 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="content" class="col-md-3 col-form-label">Article Content</label>
+                                <label for="content" class="col-md-6 col-form-label">Article Content</label>
                                 <div class="col-md-12">
-                                    <textarea id="textarea-input" id="content" name="content" rows="9" class="form-control" placeholder="Content.." [formControl]="articleForm.controls['content']"></textarea>
+                                    <textarea id="textarea-input" id="content" name="content" rows="9" class="form-control" placeholder="Content.." [formControl]="articleForm.controls['content']" required></textarea>
                                 </div>
 
                                 <div *ngIf="articleForm.controls['content'].hasError('required') && formSubmitAttempt" class="form-error">
                                     article content is required
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="feature_img" class="col-md-6 col-form-label">Feature Image</label>
+                                <div class="col-md-12">
+                                    <input type="file" name="feature_img" [formControl]="articleForm.controls['feature_img']" (change)="addDocument($event)">
+                                </div>
+
+                                <div *ngIf="articleForm.controls['feature_img'].hasError('required') && formSubmitAttempt" class="form-error">
+                                    feature image is required
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="feature_image_caption" class="col-md-6 col-form-label">Image Caption</label>
+                                <div class="col-md-12">
+                                    <input type="text" id="feature_image_caption" name="feature_image_caption" class="form-control" placeholder="Image Caption" [formControl]="articleForm.controls['feature_image_caption']" required>
+                                </div>
+
+                                <div *ngIf="articleForm.controls['feature_image_caption'].hasError('required') && formSubmitAttempt" class="form-error">
+                                    image caption is required
                                 </div>
                             </div>
 
